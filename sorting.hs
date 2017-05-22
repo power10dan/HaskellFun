@@ -23,7 +23,7 @@ mergesort' list
      | (length list) > 1 = merge (mergesort' ls) (mergesort' rs)
      | otherwise = list 
      where (ls, rs) = splithalf' list 
-     
+
 -- bubblesort 
 bubblesort :: (Ord a) => [a] -> [a]
 bubblesort [] = []
@@ -32,10 +32,10 @@ bubblesort (x:y:xs)
     | (x > y) = y:bubblesort (x:xs) 
     | otherwise = x:bubblesort (y:xs) 
 
+-- driver program to apply the swap N times, where N is the length of the list 
 bubblesort' :: (Ord a) => [a] -> Int -> [a]
 bubblesort' xs i 
     | i == (length xs) = xs
     | otherwise = bubblesort' (bubblesort xs) (i + 1) 
  
-
 
